@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+</html><!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Bookings</title>
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+ <!-- Custom CSS -->
+ <style>
+    body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e6e8ed;
+  color: #666666;
+  font-family: "Montserrat", sans-serif;
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+  line-height: 1px;
+}
+
+
+
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar main main main";
+  height: 100vh;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.header {
+  grid-area: header;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* ---------- SIDEBAR ---------- */
+
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #21232d;
+  color: #9799ab;
+  overflow-y: auto;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 30px;
+}
+
+
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin-top: 15px;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #9799ab;
+}
+
+
+/* ---------- MAIN ---------- */
+
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+}
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-title > p {
+  font-size: 20px;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d3;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.card:first-child {
+  border-left: 7px solid #246dec;
+}
+
+.card:nth-child(2) {
+  border-left: 7px solid #f5b74f;
+}
+
+.card:nth-child(3) {
+  border-left: 7px solid #367952;
+}
+
+.card:nth-child(4) {
+  border-left: 7px solid #cc3c43;
+}
+
+.card > span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > p {
+  font-size: 18px;
+}
+
+.card-inner > span {
+  font-size: 35px;
+}
+
+/*table*/
+table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: #f8f9fa;
+      }
+
+      th,
+      td {
+        border: 1px solid #E1DDDD;
+        padding: 0.75rem;
+        vertical-align: top;
+        text-align: center;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+      }
+ </style>
+
+    </head>
+<body>
+    <div class="grid-container">
+        <!-- header-->
+        <header class="header">
+           
+        <div class="header-left">
+            <span class="material-icons-outlined"></span>
+          </div>
+          
+          <div class="header-right">
+            <a href="/logout" style="text-decoration:none" target="_self">Logout</a>
+            <span class="material-icons-outlined">logout</span>
+        </a>
+          </div>
+        </header>
+        <!--end header-->
+    <!--sidebar-->
+    <aside id="sidebar">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <span class="material-icons-outlined"><span class="material-symbols-outlined">
+                    admin_panel_settings
+                    </span></span> AdoptMe-Rehome a Pet
+              </div>
+              
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="/admin/home" style="text-decoration:none; color: white" target="_self">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+        
+          <a href="/admin/getallpets" style="text-decoration:none; color: white" target="_self">  <li class="sidebar-list-item">
+              
+                <span class="material-icons-outlined">pets</span> Pets
+             
+            </li>
+          </a>
+          <li class="sidebar-list-item">
+            <a href="/admin/bookings" style="text-decoration:none; color: white" target="_self">
+              <span class="material-icons-outlined">book</span> Bookings
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/admin/users" style="text-decoration:none; color: white" target="_self">
+              <span class="material-icons-outlined">group</span> Users
+            </a>
+          </li>
+        </ul>
+    </aside>
+    <!--end sidebar-->
+    <!--main-->
+    <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">All Bookings</p>
+        </div>
+
+        <div class="main-cards">
+
+            
+          
+          <table>
+            <thead>
+              <tr>
+                <th>S. No.</th>
+                <th>Pet Image</th>
+                <th>Pet Name</th>
+                <th>Category</th>
+                <th>Booked By</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% bookings.forEach(function(booking, index) { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><img src="<%= booking.pet.image %>" alt="<%= booking.pet.nickname %>" height="50"></td>
+                  <td><%= booking.pet.name %></td>
+                  <td><%= booking.pet.category %></td>
+                  <td><%= booking.user.name %></td>
+                  <td><%= booking.user.address %></td>
+                  <td><%= booking.user.phone %></td>
+                  <td><%= booking.user.email %></td>
+                  <td><%= booking.date %></td>
+                  <td><%= booking.time %></td>
+                  <td><a href="/admin/successBooking/<%= booking._id %>" onclick="return confirm('Congrats on successful adoption. Cherers')">Delete</a></td>
+                  <td><a href="/admin/removeBooking/<%= booking._id %>" onclick="return confirm('Are you sure you want to delete this booking?')">Delete</a></td>
+
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <p>        
+        <!-- <div><a href="/add-pet"><p>Add Pets</p></a></div> -->
+         </p>             
+        </div>
+
+      </main>
+    <!--end main-->
+    </div>
+</body>
+    </html>
